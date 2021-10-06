@@ -3,6 +3,7 @@ package com.example.weatherapp
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -53,6 +54,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        //only light mode
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)//keep the app always on light mode
 
         //hide the action bar
         supportActionBar?.hide()
@@ -100,12 +103,12 @@ class MainActivity : AppCompatActivity() {
         submitButton!!.setOnClickListener {
             val zipCode = zipCodeEditText!!.text.toString()
             if (zipCode.length > 16 || zipCode.length < 3) {
-                Toast.makeText(this, "please enter a valid zip code", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Please enter a valid zip code", Toast.LENGTH_SHORT).show()
             } else {
                 val zipcode = zipCodeEditText.text.toString()
                 requestData(zipcode)
                 if(!validZipCode){
-                    Toast.makeText(this,"please enter a valid zip code", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this,"Please enter a valid zip code", Toast.LENGTH_SHORT).show()
                 }else{
                     currentZipCode = zipcode
                     bottomSheetDialog.dismiss()
@@ -152,7 +155,7 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
             } catch (e: Exception) {
-                Toast.makeText(this@MainActivity, "something went wrong", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@MainActivity, "Something went wrong, please Refresh Data again", Toast.LENGTH_SHORT).show()
             }
         }
     }
