@@ -87,7 +87,7 @@ class MainActivity : AppCompatActivity() {
             updateDegrees(celcius)
         }
 
-        // requestData(currentZipCode)
+        requestData(currentZipCode)
 
     }
 
