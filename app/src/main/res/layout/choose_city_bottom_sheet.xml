@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/victoria"
+    android:gravity="center"
+    android:id="@+id/choose_city_bottom_sheet"
+    android:paddingVertical="50dp"
+    >
+
+
+    <TextView
+        android:id="@+id/tv_enterCityZipCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter city zip code:"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20dp" />
+
+    <EditText
+        android:id="@+id/edt_zipCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:maxLength="16"
+        android:padding="10dp"
+        android:layout_margin="10dp"
+        android:textColor="@color/white"
+        android:textColorHint="#c7c7c7"
+        android:background="@drawable/white_background"
+        android:hint="Zip code" />
+
+    <Button
+        android:id="@+id/btn_submitZipCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/blueZodiac"
+        android:fontFamily="@font/quicksand_bold"
+        android:alpha="0.6"
+        android:text="Submit" />
+</LinearLayout>
